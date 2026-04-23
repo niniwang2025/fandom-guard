@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>护担 · 优雅反击</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-cn">护 担</span>
+        <span class="logo-en">Fandom Guard</span>
+      </div>
+      <span class="header-tagline">字字有力，优雅护担</span>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section class="idol-bar">
+      <div class="section-label">我的偶像</div>
+      <div class="idol-row">
+        <span class="idol-label">名字</span>
+        <input class="idol-input" id="idolName" type="text"
+          placeholder="填入偶像名字，回复更有针对性" maxlength="20">
+      </div>
+      <div class="field-pills">
+        <button class="pill active" data-field="idol">偶像</button>
+        <button class="pill" data-field="actor">演员</button>
+        <button class="pill" data-field="singer">歌手</button>
+        <button class="pill" data-field="athlete">运动员</button>
+        <button class="pill" data-field="vtuber">虚拟主播</button>
+        <button class="pill" data-field="anchor">主播</button>
+        <button class="pill" data-field="other">其他</button>
+      </div>
+    </section>
+
+    <div class="mode-switch">
+      <button class="mode-btn active" id="btnPaste" onclick="switchMode('paste')">粘贴黑粉原话</button>
+      <button class="mode-btn" id="btnTemplate" onclick="switchMode('template')">选择攻击类型</button>
+    </div>
+
+    <section class="panel" id="panelPaste">
+      <div class="section-label">黑粉说了什么</div>
+      <textarea class="big-textarea" id="pasteContent"
+        placeholder="把让你气到的那句话粘贴进来……"
+        rows="4" maxlength="500"></textarea>
+      <div class="char-count"><span id="charCount">0</span> / 500</div>
+    </section>
+
+    <section class="panel hidden" id="panelTemplate">
+      <div class="section-label">攻击类型</div>
+      <div class="attack-grid">
+        <button class="attack-tag" data-type="ability">质疑实力</button>
+        <button class="attack-tag" data-type="hype">炒作营销</button>
+        <button class="attack-tag" data-type="character">人品攻击</button>
+        <button class="attack-tag" data-type="appearance">外貌嘲讽</button>
+        <button class="attack-tag" data-type="fans">黑粉丝群</button>
+        <button class="attack-tag" data-type="other">其他</button>
+      </div>
+    </section>
+
+    <section class="style-section">
+      <div class="section-label">回复风格</div>
+      <div class="style-pills">
+        <button class="style-pill active" data-style="mixed">混合推荐</button>
+        <button class="style-pill" data-style="sharp">犀利</button>
+        <button class="style-pill" data-style="humor">幽默</button>
+        <button class="style-pill" data-style="logic">有理有据</button>
+      </div>
+    </section>
+
+    <button class="generate-btn" id="generateBtn" onclick="generate()">
+      <span id="btnText">生成反击</span>
+      <span class="hidden" id="btnLoading"><span class="spinner"></span> 生成中</span>
+    </button>
+
+    <section class="results-section hidden" id="results">
+      <div class="divider">回击话术</div>
+      <div class="results-meta">
+        <span class="results-title">为你生成了 3 条回复</span>
+        <span class="results-sub" id="inputSummary"></span>
+      </div>
+      <div class="replies-list" id="repliesList"></div>
+    </section>
+
+    <section class="history-section">
+      <div class="history-header">
+        <span class="history-title">最近使用</span>
+        <button class="clear-btn" onclick="clearHistory()">清除记录</button>
+      </div>
+      <div class="history-list" id="historyList"></div>
+    </section>
+
+  </main>
+
+  <div class="toast hidden" id="toast"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
