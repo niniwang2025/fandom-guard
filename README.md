@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 追星护卫队 🛡️
 > 智能反黑粉助手 · Full-Stack AI Web App
 
@@ -86,3 +87,7 @@ http://localhost:8000
 - 独立设计并实现前后端分离 AI Web 应用，前端 H5 + 后端 FastAPI
 - 对接公司内网 LLM 平台（OpenAI 兼容协议），封装 Prompt Engineering 模块
 - 实现流式响应、错误降级、本地缓存等生产级特性
+=======
+# fandom-guard
+护担 · 嘴笨粉丝的优雅反击助手
+>>>>>>> 2c23c7ef94404e228777ddd03f298adccccb8b0b
