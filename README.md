@@ -7,7 +7,6 @@
 |---|---|---|
 | 前端 | HTML5 + CSS3 + Vanilla JS | 手机端H5，零依赖 |
 | 后端 | Python 3.10+ · FastAPI | REST API + 静态文件托管 |
-| AI | OpenAI 兼容接口（公司内网LLM） | 无需 API Key |
 | 部署 | 单命令启动 | `uvicorn main:app` |
 
 ## 项目结构
